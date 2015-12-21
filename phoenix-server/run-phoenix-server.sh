@@ -29,5 +29,7 @@ addConfig $HBASE_SITE "zookeeper.znode.parent" /$ZOOKEEPER_ZNODE_PARENT
 : ${HBASE_ZOOKEEPER_QUORUM:?"HBASE_ZOOKEEPER_QUORUM is required."}
 addConfig $HBASE_SITE "hbase.zookeeper.quorum" $HBASE_ZOOKEEPER_QUORUM
 
+addConfig $HBASE_SITE "hbase.zookeeper.property.clientPort"$ {HBASE_ZOOKEEPER_PROPERTY_CLIENTPORT:=2181}
+
 export HBASE_CONF_DIR=/opt/phoenix/conf
 gosu hbase /opt/phoenix-server/bin/queryserver.py
