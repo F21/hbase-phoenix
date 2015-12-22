@@ -23,8 +23,8 @@ RUN arch="$(dpkg --print-architecture)" \
 	&& wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.7/gosu-$arch" \
 	&& chmod +x /usr/local/bin/gosu
 
-ADD run-phoenix-server.sh /opt/phoenix-server/bin/run-phoenix-server.sh
+ADD run-phoenix-server.sh /run-phoenix-server.sh
 
 EXPOSE 8765
 
-CMD ["/opt/phoenix-server/bin/run-phoenix-server.sh"]
+CMD ["/run-phoenix-server.sh"]
