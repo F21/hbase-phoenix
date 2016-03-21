@@ -1,10 +1,10 @@
 # HBase master with phoenix
 
-FROM f21global/hbase-master:1.1.2
+FROM f21global/hbase-master:1.1.3
 MAINTAINER Francis Chuang <francis.chuang@boostport.com>
 
 ENV HBASE_MAJOR_VER 1.1
-ENV PHOENIX_VER 4.6.0
+ENV PHOENIX_VER 4.7.0
 
 RUN mkdir -p /opt/phoenix \
     && wget -q -O - http://apache.uberglobalmirror.com/phoenix/phoenix-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER/bin/phoenix-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER-bin.tar.gz | tar -xzf - -C /opt/phoenix --strip-components 1 \

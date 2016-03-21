@@ -4,7 +4,7 @@ FROM f21global/java:8
 MAINTAINER Francis Chuang <francis.chuang@boostport.com>
 
 ENV HBASE_MAJOR_VER 1.1
-ENV PHOENIX_VER 4.6.0
+ENV PHOENIX_VER 4.7.0
 
 RUN groupadd hadoop \
     && adduser --system --home /opt/phoenix-server --disabled-login --ingroup hadoop hbase \

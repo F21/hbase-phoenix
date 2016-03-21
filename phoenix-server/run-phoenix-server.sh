@@ -31,5 +31,7 @@ addConfig $HBASE_SITE "hbase.zookeeper.quorum" $HBASE_ZOOKEEPER_QUORUM
 
 addConfig $HBASE_SITE "hbase.zookeeper.property.clientPort"$ {HBASE_ZOOKEEPER_PROPERTY_CLIENTPORT:=2181}
 
+addConfig $HBASE_SITE "phoenix.transactions.enabled" true
+
 export HBASE_CONF_DIR=/opt/phoenix-server/conf
 exec gosu hbase /opt/phoenix-server/bin/queryserver.py

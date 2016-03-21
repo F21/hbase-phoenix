@@ -20,5 +20,9 @@ addConfig () {
 # Phoenix config
 addConfig $HBASE_SITE "hbase.master.loadbalancer.class" "org.apache.phoenix.hbase.index.balancer.IndexLoadBalancer"
 addConfig $HBASE_SITE "hbase.coprocessor.master.classes" "org.apache.phoenix.hbase.index.master.IndexMasterObserver"
+addConfig $HBASE_SITE "data.tx.snapshot.dir" "/tmp/tephra/snapshots"
+addConfig $HBASE_SITE "data.tx.timeout" "60"
+
+gosu hbase /opt/hbase/bin/tephra
 
 /run-master.sh
