@@ -12,6 +12,7 @@ RUN mkdir -p /opt/phoenix \
     && mv /opt/phoenix/phoenix-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER-server.jar /opt/hbase/lib/ \
     && mv /opt/phoenix/phoenix-core-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER.jar /opt/hbase/lib/ \
     && mv /opt/phoenix/bin/tephra /opt/hbase/bin/tephra \
+    && mv /opt/phoenix/bin/tephra-env.sh /opt/hbase/bin/tephra-env.sh \
     && rm -rf /opt/phoenix
 
 ADD run-master.sh /run-phoenix-master.sh
