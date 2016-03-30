@@ -10,7 +10,6 @@ RUN mkdir -p /opt/phoenix \
     && wget -q -O - http://apache.uberglobalmirror.com/phoenix/phoenix-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER/bin/phoenix-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER-bin.tar.gz | tar -xzf - -C /opt/phoenix --strip-components 1 \
     && chown -R hbase:hadoop /opt/phoenix \
     && mv /opt/phoenix/phoenix-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER-server.jar /opt/hbase/lib/ \
-    && mv /opt/phoenix/phoenix-core-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER.jar /opt/hbase/lib/ \
     && mv /opt/phoenix/bin/tephra /opt/hbase/bin/tephra \
     && mv /opt/phoenix/bin/tephra-env.sh /opt/hbase/bin/tephra-env.sh \
     && rm -rf /opt/phoenix

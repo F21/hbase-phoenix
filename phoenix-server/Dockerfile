@@ -14,7 +14,7 @@ RUN groupadd hadoop \
     && mkdir -p /tmp/phoenix \
     && wget -q -O - http://apache.uberglobalmirror.com/phoenix/phoenix-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER/bin/phoenix-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER-bin.tar.gz | tar -xzf - -C /tmp/phoenix --strip-components 1 \
     && mv /tmp/phoenix/phoenix-server-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER-runnable.jar /opt/phoenix-server/ \
-    && mv /tmp/phoenix/phoenix-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER-client.jar /opt/phoenix-server/ \
+    && mv /tmp/phoenix/phoenix-$PHOENIX_VER-HBase-$HBASE_MAJOR_VER-server.jar /opt/phoenix-server/ \
     && mv /tmp/phoenix/bin /opt/phoenix-server/bin \
     && rm -rf /tmp/phoenix \
     && chown -R hbase:hadoop /opt/phoenix-server
