@@ -23,8 +23,8 @@ addConfig $HBASE_SITE "hbase.coprocessor.master.classes" "org.apache.phoenix.hba
 addConfig $HBASE_SITE "data.tx.snapshot.dir" "/tmp/tephra/snapshots"
 addConfig $HBASE_SITE "data.tx.timeout" "60"
 
-/run-master.sh &
+gosu hbase /run-master.sh &
 
 export HBASE_CP=/opt/hbase/lib
 export HBASE_HOME=/opt/hbase
-gosu hbase /opt/hbase/bin/tephra start &
+gosu hbase /opt/hbase/bin/tephra start
