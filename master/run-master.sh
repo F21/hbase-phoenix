@@ -7,6 +7,21 @@ HBASE_SITE="/opt/hbase/conf/hbase-site.xml"
 ln -s $CORE_SITE /opt/hbase/conf/core-site.xml
 ln -s $HDFS_SITE /opt/hbase/conf/hdfs-site.xml
 
+addConfig () {
+
+    if [ $# -ne 3 ]; then
+        echo "There should be 3 arguments to addConfig: <file-to-modify.xml>, <property>, <value>"
+        echo "Given: $@"
+        exit 1
+    fi
+
+    xmlstarlet ed -L -s "/configuration" -t elem -n propertyTMP -v "" \
+     -s "/configuration/propertyTMP" -t elem -n name -v $2 \
+     -s "/configuration/propertyTMP" -t elem -n value -v $3 \
+     -r "/configuration/propertyTMP" -v "property" \
+     $1
+}
+
 # Update hbase-site.xml
 : ${CLUSTER_NAME:?"CLUSTER_NAME is required."}
 : ${HDFS_CLUSTER_NAME:?"HDFS_CLUSTER_NAME is required."}
