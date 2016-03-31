@@ -88,3 +88,5 @@ gosu hbase /opt/hbase/bin/hbase --config /opt/hbase/conf master start &
 
 echo "Starting tephra transaction server..."
 gosu hbase /opt/hbase/bin/tephra start &
+
+while true; do sleep 1; done
