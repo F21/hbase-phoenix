@@ -33,5 +33,7 @@ addConfig $HBASE_SITE "hbase.zookeeper.property.clientPort"$ {HBASE_ZOOKEEPER_PR
 
 addConfig $HBASE_SITE "phoenix.transactions.enabled" true
 
+[ ! -z "$PHOENIX_QUERYSERVER_SERIALIZATION" ] && addConfig $HBASE_SITE "phoenix.queryserver.serialization" ${PHOENIX_QUERYSERVER_SERIALIZATION}
+
 export HBASE_CONF_DIR=/opt/phoenix-server/conf
 exec gosu hbase /opt/phoenix-server/bin/queryserver.py
