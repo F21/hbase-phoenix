@@ -1,6 +1,6 @@
 # HBase regionserver with phoenix
 
-FROM f21global/hbase-regionserver:1.1.3
+FROM f21global/hbase-regionserver:1.1.4
 MAINTAINER Francis Chuang <francis.chuang@boostport.com>
 
 ENV HBASE_MAJOR_VER 1.1
