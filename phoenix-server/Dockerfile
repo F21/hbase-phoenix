@@ -1,8 +1,8 @@
 FROM openjdk:8-jre-alpine
 MAINTAINER Francis Chuang <francis.chuang@boostport.com>
 
-ENV HBASE_MINOR_VERSION 1.2
-ENV PHOENIX_VERSION 4.10.0
+ENV HBASE_MINOR_VERSION 1.3
+ENV PHOENIX_VERSION 4.12.0
 
 RUN apk --no-cache --update add bash ca-certificates gnupg openssl python su-exec tar \
  && apk --no-cache --update --repository https://dl-3.alpinelinux.org/alpine/edge/community/ add xmlstarlet \

@@ -1,8 +1,8 @@
-FROM f21global/hbase:1.2.4
+FROM f21global/hbase:1.3.1
 MAINTAINER Francis Chuang <francis.chuang@boostport.com>
 
-ENV HBASE_MINOR_VERSION 1.2
-ENV PHOENIX_VERSION 4.10.0
+ENV HBASE_MINOR_VERSION 1.3
+ENV PHOENIX_VERSION 4.12.0
 
 RUN apk --no-cache --update add bash ca-certificates gnupg openssl su-exec tar \
  && update-ca-certificates \
